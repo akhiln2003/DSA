@@ -992,70 +992,135 @@
 
 
 
+                // Removing duplicite values
+// class Node{
+//         constructor(value){
+//                 this.data = value;
+//                 this.next = null
+//         }
+// }
+// class LinkedList{
+//         constructor(){
+//                 this.head = null;
+//                 this.tail = null;
+//                 this.size = 0;
+//         }
+//         print(){
+//                 if(this.size == 0){
+//                         return console.log("This list is empyt");
+//                 }else{
+//                         let current = this.head;
+//                         let out = '';
+//                         while(current){
+//                                 out += ` ${current.data}`;
+//                                 current = current.next;
+//                         }
+//                         console.log(out);
+//                 }
+//         }
+//         append(value){
+//                 let node = new Node(value);
+//                 if(this.size == 0 ){
+//                         this.head = node;
+//                         this.tail = node;
+//                 }
+//                 else{
+//                         this.tail.next = node;
+//                           this.tail = node
+//                 }
+//                 this.size++;
+//         }
+//         removeDup(){
+//                 if(this.size == 0){
+//                         return console.log("The list is empty");
+//                 }else{
+//                         let current = this.head;
+//                         while(current.next){
+//                                 if(current.data == current.next.data){
+//                                        current.next = current.next.next;
+//                                        this.size--;
+//                                 }else{
+//                                         current = current.next
+//                                 }
+//                         }
+//                 }
+//         }
+        
+// }
+// const list = new LinkedList()
+// list.append(1)
+// list.append(2)
+// list.append(2)
+// list.append(2)
+// list.append(3)
+// list.append(4)
+// list.print()
+// list.removeDup()
+// list.print()
 
-class Node{
-        constructor(value){
-                this.data = value;
-                this.next = null;
-        }
-}
-class LinkedList{
-        constructor(){
-                this.head = null;
-                this.tail = null;
-                this.size = 0;
-        }
-        print(){
-                if(this.size == 0){
-                        return console.log("The list is empty");
-                }else{
-                        let current = this.head;
-                        let out = ''
-                        while(current){
-                                out += ` ${current.data}`
-                                current = current.next
-                        }
-                        console.log(out);
-                }
-        }
-        append(value){
-                let node = new Node(value);
-                if(this.size == 0 ){
-                        this.head = node;
-                        this.tail = node;
-                }else{
-                        this.tail.next = node;
-                        this.tail  = node;
-                }
-                this.size++
-        }
-        removeD(){
-                if(this.size == 0){
-                        return console.log("The list is empty");
-                }else{
-                        let prev = this.head;
-                        let current = prev.next;
-                        while(current){
-                                if(prev.data == current.data){
-                                       prev.next = current.next;
-                                }else{
-                                        prev = current
-                                        current = current.next
-                                }
-                        }
-                }
-        }
-}
 
 
 
-const list = new LinkedList()
-list.append(1)
-list.append(2)
-list.append(2)
-list.append(2)
-list.append(3)
-list.append(4)
-list.print()
-list.removeD()
-list.print()
+
+
+
+
+//                 // Checking is list is sircularLinkedlist
+// class Node{
+//         constructor(value){
+//                 this.data = value
+//                 this.next = null
+//         }
+// }
+// class LinkedList{
+//         constructor(){
+//                 this.head = null;
+//                 this.tail = null;
+//                 this.size = 0;
+//         }
+//         prind(){
+//                 if(this.size == 0 ){
+//                         return console.log("This list is emypt");
+//                 }else{
+//                         let current = this.head;
+//                         let out = ''
+//                         while(current){
+//                                 out += ` ${current.data}`
+//                                 current = current.next;
+//                         }
+//                         return console.log(out);
+//                 }
+//         }
+//         append(value){
+//                 let node = new Node(value)
+//                 if(this.size == 0 ){
+//                         this.head = node;
+//                         this.tail = node;
+//                         this.tail.next = this.head
+//                 }else{
+//                         this.tail.next = node
+//                         this.tail = node;
+//                         this.tail.next = this.head
+
+//                 }
+//         }
+//         isSircular(){
+//                 let slow = this.head;
+//                 let fast = slow.next;
+//                 while(fast && fast.next){
+//                         if(slow == fast){
+//                                 return console.log(true);
+//                         }else{
+//                                 slow = slow.next;
+//                                 fast = fast.next.next;
+//                         }
+//                 }
+//                 console.log(false);
+//         }
+// }
+// const list = new LinkedList()
+// list.append(1)
+// list.append(2)
+// list.append(3)
+// list.append(4)
+// list.isSircular()
