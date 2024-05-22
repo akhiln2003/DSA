@@ -45,7 +45,7 @@
 
 
 
-// function binarySearch(array,target){
+// function  rySearch(array,target){
 //         let leftInd = 0;
 //         let rightInd = array.length-1 ;
 //         while(leftInd <= rightInd ){
@@ -62,6 +62,7 @@
 //         return "value not fount"
 // }
 // console.log(binarySearch([1,2,3,4,5,6,7],5))
+
 
 
 
