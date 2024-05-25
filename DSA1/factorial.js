@@ -13,10 +13,10 @@
 // console.log(factorial(2));  // 120
 
 
-function recurionFactorial(n){
-    if(n<= 1){
-        return 1
-    }
-    return n*recurionFactorial(n-1);
-}
-console.log(recurionFactorial(5))
+// function recurionFactorial(n){
+//     if(n<= 1){
+//         return 1
+//     }
+//     return n*recurionFactorial(n-1);
+// }
+// console.log(recurionFactorial(5))
