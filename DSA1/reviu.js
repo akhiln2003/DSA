@@ -81,19 +81,12 @@
 
 
 
-// function recuraction(array){
-//     let index = 0;
-//     let out = 0;
-//     return sum(array,index,out)
-// }
 
-// function sum(array,index,out){
+// function sum(array,index = 0 ,out = 0){
 //     if(index == array.length ){
 //         return console.log(out);
 //     }
 //     out += array[index]
 //     return sum(array,index+=1,out)
 // }
-
-
-// recuraction([1,2,3,4,5])
+// sum([1,2,3,4,5])

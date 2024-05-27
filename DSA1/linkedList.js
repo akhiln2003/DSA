@@ -1065,7 +1065,7 @@
 
 
 
-//                 // Checking is list is sircularLinkedlist
+//                 // Checking is list is circularLinkedList
 // class Node{
 //         constructor(value){
 //                 this.data = value
@@ -1104,7 +1104,7 @@
 
 //                 }
 //         }
-//         isSircular(){
+//         isCircular(){
 //                 let slow = this.head;
 //                 let fast = slow.next;
 //                 while(fast && fast.next){
@@ -1123,7 +1123,7 @@
 // list.append(2)
 // list.append(3)
 // list.append(4)
-// list.isSircular()
+// list.isCircular()
 
 
 

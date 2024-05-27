@@ -66,3 +66,20 @@
 
 
 
+
+
+
+
+// function arrayRe(array, start =0 , end = array.length -1){
+//     if( start >= end){
+//         return ;
+//     }
+//       [array[end], array[start]] = [array[start], array[end]]
+//     return arrayRe(array, start +=1, end-=1)
+// }
+//  let array = [1,2,3,4,5,6]
+// arrayRe(array);
+// console.log(array);
+
+
+
