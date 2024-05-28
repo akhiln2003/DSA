@@ -81,7 +81,7 @@
 //           larg.push( array[ i ]);
 //         }
 //     }
-//     return [ ...quickSort(small) , pivot , ...quickSort(larg) ];
+//     return quickSort(small).concat( pivot , quickSort(larg) );
 // }
 // console.log(quickSort([2,4,3,1,6,5,9,0]));
 
