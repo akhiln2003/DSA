@@ -10,7 +10,7 @@
 //     constructor() {
 //         this.top = null;
 //     }
-//     push(value) {e
+//     push(value) {
 //         let node = new Node(value);
 //         if (this.top == null) {
 //             this.top = node;
@@ -30,7 +30,7 @@
 //         if (this.top == null) {
 //             return console.log(" the stack is empty ");
 //         } else {
-//             return console.log(this.top.data);
+//             return console.log( ` this is the peek vale ${this.top.data }`);
 //         }
 //     }
 //     print() {
@@ -51,7 +51,7 @@
 // stack.push(1)
 // stack.print()
 // stack.pop()
-// stack.peek()
+// stack.print()
 
 
 
@@ -107,31 +107,46 @@
 // queue.enqueue(1);
 // queue.enqueue(2);
 // queue.enqueue(3);
-// queue.enqueue(4);
-// queue.enqueue(5);
 // queue.print()
 // queue.dequeue()
 // queue.print()
 
 
 
-                // With Array
-// class queue{
-//     constructor(){
+
+
+                            // With Array
+
+// class queue {
+//     constructor() {
 //         this.array = [];
 //     }
-//     enqueueu(value){
+//     enqueueu(value) {
 //         this.array.push(value);
 //     }
-//     dequeue(){
-//         if( this.array.length < 1 ){
+//     dequeue() {
+//         if (this.array.length < 1) {
 //             return console.log(" the  array is empty ");
-//         }else{
-//             this.array.unshift()
+//         } else {
+//             this.array.shift()
+//         }
+//     }
+//     print() {
+//         if (this.array.length < 1) {
+//             return console.log(" stack is empty ");
+//         }
+//         for (let i = this.array.length-1; i >= 0 ; i++) {
+//             console.log(this.array[i]);
 //         }
 //     }
 // }
-
+// const queues = new queue()
+//  queues.enqueueu(1)
+//  queues.enqueueu(2);
+//  queues.enqueueu(3)
+//  queues.print()
+//  queues.dequeue()
+//  queues.print()
 
 
 
@@ -148,9 +163,21 @@
 //         }
 //         this.array.pop()
 //     }
+//     print(){
+//         if( this.array.length < 1 ){
+//             return console.log(" stack is empty ");
+//         }
+//         for( let i = 0; i < this.array.length; i++ ) {
+//             console.log(this.array[i]);
+//         }
+//     }
 // }
-
-
-
+// const stacks = new stack()
+// stacks.push(1)
+// stacks.push(2);
+// stacks.push(3)
+// stacks.print()
+// stacks.pop()
+// stacks.print()
 
 
