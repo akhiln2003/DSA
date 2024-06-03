@@ -1130,15 +1130,15 @@
 
 
 
-function count( string ) {
-    let hash = {}
-    for( let i = 0; i < string.length; i++ ) {
-        if( hash[ string[ i ] ] ) {
-            hash[ string[ i ] ] += 1;
-        } else {
-            hash[ string[ i ] ] = 1;
-        }
-    }
-    return console.log( hash );
-}
-count(" akhil ")
+// function count( string ) {
+//     let hash = {}
+//     for( let i = 0; i < string.length; i++ ) {
+//         if( hash[ string[ i ] ] ) {
+//             hash[ string[ i ] ] += 1;
+//         } else {
+//             hash[ string[ i ] ] = 1;
+//         }
+//     }
+//     return console.log( hash );
+// }
+// count(" akhil ")
