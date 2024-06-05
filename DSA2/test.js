@@ -1142,3 +1142,164 @@
 //     return console.log( hash );
 // }
 // count(" akhil ")
+
+
+
+
+
+
+// class queue {
+//     constructor(){
+//          this.array1 = [];
+//          this.array2 = [];
+//     }
+//     enqueue( val ){
+//         this.array2.push(val)
+//         while( this.array1.length != 0 ){
+//             this.array2.push(this.array1.shift())
+//         }
+
+//         let temp = this.array1;
+//         this.array1 = this.array2;
+//         this.array2 = temp
+//     }
+//     dequeue(){
+//         if( this.array1.length < 0 ){
+//             return console.log(" the stack is empty ");
+//         }else{
+//             return console.log(this.array1.shift());
+//         }
+//     }
+//     print(){
+//         if( this.array1.length < 0 ){
+//             return console.log(" the stack is empty ");
+//         }
+//         for( let i =0; i < this.array1.length; i++ ){
+//             console.log( this.array1[i] );
+//         }
+//     }
+
+// }
+// const stack = new queue()
+// stack.enqueue(4)
+// stack.enqueue(6);
+// stack.print()
+// stack.dequeue()
+
+
+
+
+
+
+
+// function bubbleSortDay6( array ){
+//     for( let i = 0; i < array.length; i++ ){
+//         for( let j = 0; j < array.length - i; j++ ){
+//             if( array[ j ] > array[ j + 1 ] ){
+//                 [ array[ j + 1 ] , array[ j ] ] = [ array[ j ] , array[ j + 1 ] ];
+//             }
+//         }
+//     }
+//     return console.log( array );
+// }
+// bubbleSortDay6( [6,5,4,3,2,1] );
+
+
+
+
+
+
+
+// function insertionSortDay6( array ){
+//     for( let i = 0; i < array.length; i++ ) {
+//         let index = i - 1; 
+//         let value = array[ i ];
+//         while( index >= 0 && value < array[ index ] ){
+//             array[ index + 1 ] = array[ index ];
+//             index--;
+//         }
+//         array[ index + 1 ] = value;
+//     }
+//     return console.log( array );
+// }
+// insertionSortDay6([6,7,5,4,3,0,1,11])
+
+
+
+
+
+
+
+
+
+// function selectionSortDay6( array ){
+//     for( let i = 0; i < array.length; i++ ){
+//         let min = i;
+//         for( let j = i + 1; j < array.length; j++ ){
+//             if( array[ min ] > array[ j ] ){
+//                 min = j;
+//             }
+//         }
+//         if( min != i ){
+//             [ array[ min ] , array[ i ] ] = [ array[ i ] , array[ min ] ];
+//         }
+//     }
+//     return console.log( array );
+// }
+// selectionSortDay6([0,8,7,6,1,2,3,4]);
+
+
+
+
+
+
+
+
+// function quickSortDay6( array ){
+//     if( array.length < 2 ){
+//         return array;
+//     }
+//     let pivot = array[ array.length - 1 ];
+//     let left = [];
+//     let right = [];
+//     for( let i = 0; i < array.length - 1; i++ ){
+//         if( pivot >= array[ i ] ){
+//             left.push( array[ i ] );
+//         }else{
+//             right.push( array[ i ] );
+//         }
+//     }
+//     return quickSortDay6( left ).concat( pivot , quickSortDay6( right ) )
+// }
+// console.log( quickSortDay6( [ 5 , 0 , 9 , 1 , 7 , 4 , 6 , 2 , 9 , 0 ] ) );
+
+
+
+
+
+
+
+
+
+
+// function meargeSortDay6( array ) {
+//     if( array.length < 2 ){
+//         return array;
+//     }
+//     let mid = Math.floor( array.length / 2 );
+//     let left = array.slice( 0 , mid );
+//     let right = array.slice( mid );
+//     return mearge( meargeSortDay6( left ) , meargeSortDay6( right ) );
+// }
+// function mearge( leftArray , rightArray ){
+//     let sortedArray = [];
+//     while( leftArray.length && rightArray.length ){
+//         if( leftArray[ 0 ] > rightArray[ 0 ] ){
+//             sortedArray.push( rightArray.shift() );
+//         }else{
+//             sortedArray.push( leftArray.shift() )
+//         }
+//     }
+//     return [ ...sortedArray , ...leftArray , ...rightArray ]
+// }
+// console.log( meargeSortDay6([0,9,8,7,6,5,4,3,-3,2,1]));
