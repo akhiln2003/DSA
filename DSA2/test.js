@@ -1303,3 +1303,209 @@
 //     return [ ...sortedArray , ...leftArray , ...rightArray ]
 // }
 // console.log( meargeSortDay6([0,9,8,7,6,5,4,3,-3,2,1]));
+
+
+
+
+
+
+
+
+
+
+
+// class Node{
+//     constructor( value ){
+//         this.data = value;
+//         this.next = null;
+//     }
+// }
+// class Stack{
+//     constructor(){
+//         this.top = null
+//     }
+//     push( value ) {
+//         let node = new Node( value );
+//         if(this.top == null ){
+//             return this.top = node;
+//         }else{
+//             node.next = this.top;
+//             this.top = node;
+//             return
+//         }      
+//     }
+//     pop(){
+//         if(this.top == null ){
+//             return console.log( " the stack is empty " );
+//         }else{
+//             console.log('removed : ' + this.top.data);
+//             this.top = this.top.next
+//         }
+//     }
+//     print(){
+//         if(this.top == null ) {
+//             return console.log(" the stack is empty ");
+//         }
+//         let current = this.top;
+//         while( current ){
+//             console.log( current.data );
+//             current = current.next;
+//         }
+//     }
+// }
+// const stack = new Stack();
+// stack.print()
+// stack.push(2);
+// stack.push(3);
+// stack.push(4);
+// stack.pop();
+// stack.print()
+
+
+
+
+
+
+
+
+
+// function count(string){
+//     let map = new Map();
+//     for( let i = 0; i < string.length; i++ ){
+//         if( map.has(string[i]) ){
+//             map.set( string[i] , map.get( string[i]) + 1 )
+//         }else{
+//             map.set(string[i] , 1)
+//         }
+//     }
+//     return map
+// }
+// console.log(count("akhilmayren"));
+
+
+
+
+
+
+
+
+
+
+
+// class hashTable{
+//     constructor(size){
+//         this.table = new Array( size );
+//         this.size = size;
+//     }
+//     hash( key ){
+//         let hash = 0;
+//         for( let i = 0; i < key.length; i++) {
+//             hash += key.charCodeAt(i);
+//         }
+//         return hash % this.size;
+//     }
+//     set( key , value ){
+//         let index = this.hash( key );
+//         if( !this.table[ index ] ){
+//             this.table[ index ] = [];
+//         }
+//         let bucket = this.table[ index ];
+//         for( let i = 0; i < bucket.length; i++ ){
+//             if( bucket[i][0] == key ){
+//               return  bucket[i][1] = value;
+//             }
+//         }
+//         bucket.push([ key , value ])
+//     }
+//     get( key ){
+//         let index = this.hash( key );
+//         if( !this.table[ index ] ){
+//             return console.log(" the key is invalid ");
+//         }
+//         let bucket = this.table[ index ];
+//         for( let i = 0; i < bucket.length; i++ ){
+//             if( bucket[i][0] == key ){
+//                 return console.log(bucket[i]);
+//             }
+//         }
+//     }
+//     remove( key ){
+//         let index = this.hash( key ) ;
+//         if( !this.table[ index ] ){
+//             return console.log(" the key is invalid ");
+//         }
+//         let bucket = this.table[ index ];
+//         for( let i = 0; i < bucket.length; i++ ){
+//             if( bucket[i][0] == key ){
+//                 bucket.slice( i , 1 )
+//             }
+//         }
+//     }
+//     display(){
+//         console.log( this.table );
+//     }
+// }
+// const hashtable =  new hashTable(3);
+// hashtable.set("name" , "akhil");
+// hashtable.set("age" , 21)
+// hashtable.set("place" , 'feroke')
+// hashtable.get("name");
+
+
+
+
+
+
+
+
+
+
+
+// class queueStack{
+//     constructor(){
+//         this.queue  = [];
+//         this.queue1 = [];
+//     }
+//     push( value ) {
+//         if( this.queue.length < 1 ){
+//            return this.queue.push( value );
+//         }
+//         this.queue1.push( value );
+//         while( this.queue.length  ){
+//             this.queue1.push(this.queue.shift());
+//         }
+//         let temp = this.queue;
+//         this.queue = this.queue1;
+//         this.queue1 = temp;       
+//     }
+//     pop(){
+//         if( this.queue.length < 1 ){
+//             return console.log(" the queue is empty ");
+//         }
+//         console.log( " removed : " + this.queue[0]);
+//         return this.queue.shift();
+//     }
+//     log(){
+//         console.log( this.queue );
+//     }
+// }
+// const stack = new queueStack();
+// stack.push(1);
+// stack.push(2);
+// stack.push(3);
+// stack.pop()
+// stack.log()
+
+
+
+
+
+
+
+
+
+
+
+
+
+

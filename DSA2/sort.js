@@ -93,24 +93,24 @@
 
 
 
-// function mergeSort( array ) {
-//     if( array.length < 2 ){
-//         return array
-//     }
-//     let mid = Math.floor( array.length / 2 );
-//     let leftArray = array.slice( 0 , mid );
-//     let rightArray = array.slice( mid );
-//     return merge( mergeSort(leftArray) , mergeSort(rightArray) );
-// }
-// function merge( leftArray , rightArray ) {
-//     let sortedArray = [];
-//     while( leftArray.length && rightArray.length ){
-//         if( leftArray[0] > rightArray[0] ){
-//             sortedArray.push(rightArray.shift());
-//         }else{
-//             sortedArray.push( leftArray.shift())
-//         }
-//     }
-//     return [ ...sortedArray , ...leftArray , ...rightArray ]
-// }
-// console.log(mergeSort([82,73,6,5,42,3,-2,1]));
+function mergeSort( array ) {
+    if( array.length < 2 ){
+        return array
+    }
+    let mid = Math.floor( array.length / 2 );
+    let leftArray = array.slice( 0 , mid );
+    let rightArray = array.slice( mid );
+    return merge( mergeSort(leftArray) , mergeSort(rightArray) );
+}
+function merge( leftArray , rightArray ) {
+    let sortedArray = [];
+    while( leftArray.length && rightArray.length ){
+        if( leftArray[0] > rightArray[0] ){
+            sortedArray.push(rightArray.shift());
+        }else{
+            sortedArray.push( leftArray.shift())
+        }
+    }
+    return [ ...sortedArray , ...leftArray , ...rightArray ]
+}
+console.log(mergeSort([82,73,6,5,42,3,-2,1]));
