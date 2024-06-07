@@ -139,102 +139,109 @@
 
 
 
-class hashTable{
-    constructor( size ){
-        this.table = new Array( size );
-        this.size = size;
-        this.count = 0;
-    }
-    hash( key ){
-        let out = 0;
-        if( typeof key == ''){
+// class hashTable{
+//     constructor( size ){
+//         this.table = new Array( size );
+//         this.size = size;
+//         this.count = 0;
+//     }
+//     hash( key ){
+//         let out = 0;
+//         if( typeof key == ''){
             
-        for( let i = 0; i < key.length; i++ ){
-            out += key.charCodeAt(i);
-        }
-        return out % this.size;
-        }
-        return key % this.size;
-    }
-    resize(){
-        let oldTable = this.table;
-        this.size *= 2;
-        this.table = new Array( this.size );
+//         for( let i = 0; i < key.length; i++ ){
+//             out += key.charCodeAt(i);
+//         }
+//         return out % this.size;
+//         }
+//         return key % this.size;
+//     }
+//     resize(){
+//         let oldTable = this.table;
+//         this.size *= 2;
+//         this.table = new Array( this.size );
         
-        for( let i = 0; i < oldTable.length; i++ ){
-            if( oldTable[i] ){
+//         for( let i = 0; i < oldTable.length; i++ ){
+//             if( oldTable[i] ){
                 
-            for( let j = 0; j < oldTable[i].length; j++ ){
-                if( oldTable[i][j][0] ){
-                    this.set(oldTable[i][j][0] , oldTable[i][j][1])
-                }
-            }
-            }
-        }
-    }
-    set( key , value ){
-        const loadFactor = this.count / this.size
-        if( loadFactor > 0.7 ){
-            this.resize()
-        }
-        let index = this.hash( key );
-        if( !this.table[ index ] ){
-            this.table[ index ] = []
-        }
-        let bucket = this.table[ index ];
-        for( let i = 0 ; i < bucket.length; i++ ){
-            if( bucket[ i ][ 0 ] == key ){
-              return  bucket[ i ][ 1 ]  = value;
-            }
-        }
-        bucket.push( [ key , value ] )
-        this.count++;
-    }
-    get( key ){
-        let index = this.hash( key );
-        if( !this.table[ index ]){
-            return console.log( " the key is invalid " );
-        }
-        let bucket = this.table[ index ];
-        for( let i = 0; i < bucket.length; i++ ){
-            if( bucket[i][0] == key ){
-                return console.log( bucket[i][1])
-            }
-        }
-        return console.log( " invalid key ")
-    }
-    remove( key ){
-        let index = this.hash( key );
-        if( !this.table[ index ]){
-            return console.log( " the key is invalid " );
-        }
-        let bucket = this.table[ index ];
-        for( let i = 0; i < bucket.length; i++ ){
-            if( bucket[i][0] == key ){
-                 console.log("removed : "+ bucket[i])
-                 bucket.splice( i , 1)
-                 this.count--;
-            }
-        }
-        return console.log( " invalid key ")
-    }
-    dis(){
-        console.log( this.table )
-    }
+//             for( let j = 0; j < oldTable[i].length; j++ ){
+//                 if( oldTable[i][j][0] ){
+//                     this.set(oldTable[i][j][0] , oldTable[i][j][1])
+//                 }
+//             }
+//             }
+//         }
+//     }
+//     set( key , value ){
+//         const loadFactor = this.count / this.size
+//         if( loadFactor > 0.7 ){
+//             this.resize()
+//         }
+//         let index = this.hash( key );
+//         if( !this.table[ index ] ){
+//             this.table[ index ] = []
+//         }
+//         let bucket = this.table[ index ];
+//         for( let i = 0 ; i < bucket.length; i++ ){
+//             if( bucket[ i ][ 0 ] == key ){
+//               return  bucket[ i ][ 1 ]  = value;
+//             }
+//         }
+//         bucket.push( [ key , value ] )
+//         this.count++;
+//     }
+//     get( key ){
+//         let index = this.hash( key );
+//         if( !this.table[ index ]){
+//             return console.log( " the key is invalid " );
+//         }
+//         let bucket = this.table[ index ];
+//         for( let i = 0; i < bucket.length; i++ ){
+//             if( bucket[i][0] == key ){
+//                 return console.log( bucket[i][1])
+//             }
+//         }
+//         return console.log( " invalid key ")
+//     }
+//     remove( key ){
+//         let index = this.hash( key );
+//         if( !this.table[ index ]){
+//             return console.log( " the key is invalid " );
+//         }
+//         let bucket = this.table[ index ];
+//         for( let i = 0; i < bucket.length; i++ ){
+//             if( bucket[i][0] == key ){
+//                  console.log("removed : "+ bucket[i])
+//                  bucket.splice( i , 1)
+//                  this.count--;
+//             }
+//         }
+//         return console.log( " invalid key ")
+//     }
+//     dis(){
+//         console.log( this.table )
+//     }
     
-}
-const hashtable = new hashTable( 10 )
-hashtable.set(0,"a")
-hashtable.set(1,"a")
-hashtable.set(2,"a")
-hashtable.set(3,"a")
-hashtable.set(4,"a")
-hashtable.set(5,"a")
-hashtable.set(6,"a")
-hashtable.set(7,"a")
-hashtable.set(8,"a")
-hashtable.dis()
-hashtable.remove(0)
-hashtable.dis()
+// }
+// const hashtable = new hashTable( 10 )
+// hashtable.set(0,"a")
+// hashtable.set(1,"a")
+// hashtable.set(2,"a")
+// hashtable.set(3,"a")
+// hashtable.set(4,"a")
+// hashtable.set(5,"a")
+// hashtable.set(6,"a")
+// hashtable.set(7,"a")
+// hashtable.set(8,"a")
+// hashtable.dis()
+// hashtable.remove(0)
+// hashtable.dis()
 
-hashtable.get(0)
+// hashtable.get(0)
+
+
+
+
+
+
+
