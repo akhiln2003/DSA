@@ -103,122 +103,124 @@
 
 
 
-class Node {
-    constructor(value) {
-        this.data = value;
-        this.left = null;
-        this.right = null;
-    }
-}
-class BSTree {
-    constructor() {
-        this.root = null;
-    }
-    insert(value) {
-        let node = new Node(value);
-        if (!this.root) return this.root = node;
-        return this.insertionHelper(this.root, node);
-    }
-    insertionHelper(root, node) {
-        if (root.data > node.data) {
-            if (root.left == null) {
-                return root.left = node;
-            }
-            return this.insertionHelper(root.left, node);
-        } else {
-            if (root.right == null) {
-                return root.right = node;
-            }
-            return this.insertionHelper(root.right, node);
-        }
-    }
-    min(root = this.root) {
-        if (!root) return "the tree is empty "
-        if (!root.left) return root.data;
-        return this.min(root.left)
-    }
-    max(root = this.root) {
-        if (!root) return "the tree is empty ";
-        if (!root.right) return root.data;
-        return this.max(root.right)
-    }
-    delete(target, root = this.root) {
-        if (!root) return "the tree is empty ";
-        if (root.data > target) {
-            root.left = this.delete(target, root.left);
-        } else if (root.data < target) {
-            root.right = this.delete(target, root.right);
-        } else {
-            if (!root.right) {
-                return root.left;
-            }
-            if (!root.left) {
-                return root.right;
-            }
-            root.data = this.min(root.right);
-            root.right = this.delete(root.data, root.right);
-        }
-        return root
-    }
-    inOrder(root = this.root) {
-        if (!root) return [];
-        return [...this.inOrder(root.left), root.data, ...this.inOrder(root.right)]
 
-    }
-    preOrder(root = this.root) {
-        if (!this.root) return console.log(" the tree is empty ");
-        if (root) {
-            console.log(root.data);
-            this.preOrder(root.left);
-            this.preOrder(root.right);
-        }
-    }
-    postOrder(root = this.root) {
-        if (!this.root) return console.log(" the tree is empty ");
-        if (root) {
-            this.postOrder(this.left)
-            this.postOrder(root.right)
-            console.log(root.data);
-        }
-    }
-closest( target , root = this.root ){
-    if( !root )return console.log(" the tree is empty ");
-    let dif = Infinity;
-    let value = null
-    while( root ){
-        let d = Math.abs( root.data - target );
-        if( dif > d && root.data != target ){
-            dif = d;
-            value = root.data
-        }
-        if( root.data > target ){
-            root = root.left
-        }else if( root.data < target ){
-            root = root.right;
-        }else{
-            break;
-        }
-    }
-    return  console.log(value , dif);
-}
 
-isBST( root = this.root ){
-    if( !this.root )return " the tree is empty";
-    let sorted  = this.inOrder( root );
-    for( let i = 0; i < sorted.length; i++ ){
-        if( sorted[ i ] > sorted[ i + 1 ] )return false;
-    }
-    return true;
-}
-    print() {
-        console.log(this.root);
-    }
-}
-const bst = new BSTree();
-bst.insert(22);
-bst.insert(11);
-bst.insert(54);
-bst.insert(4)
+// class Node {
+//     constructor(value) {
+//         this.data = value;
+//         this.left = null;
+//         this.right = null;
+//     }
+// }
+// class BSTree {
+//     constructor() {
+//         this.root = null;
+//     }
+//     insert(value) {
+//         let node = new Node(value);
+//         if (!this.root) return this.root = node;
+//         return this.insertionHelper(this.root, node);
+//     }
+//     insertionHelper(root, node) {
+//         if (root.data > node.data) {
+//             if (root.left == null) {
+//                 return root.left = node;
+//             }
+//             return this.insertionHelper(root.left, node);
+//         } else {
+//             if (root.right == null) {
+//                 return root.right = node;
+//             }
+//             return this.insertionHelper(root.right, node);
+//         }
+//     }
+//     min(root = this.root) {
+//         if (!root) return "the tree is empty "
+//         if (!root.left) return root.data;
+//         return this.min(root.left)
+//     }
+//     max(root = this.root) {
+//         if (!root) return "the tree is empty ";
+//         if (!root.right) return root.data;
+//         return this.max(root.right)
+//     }
+//     delete(target, root = this.root) {
+//         if (!root) return "the tree is empty ";
+//         if (root.data > target) {
+//             root.left = this.delete(target, root.left);
+//         } else if (root.data < target) {
+//             root.right = this.delete(target, root.right);
+//         } else {
+//             if (!root.right) {
+//                 return root.left;
+//             }
+//             if (!root.left) {
+//                 return root.right;
+//             }
+//             root.data = this.min(root.right);
+//             root.right = this.delete(root.data, root.right);
+//         }
+//         return root
+//     }
+//     inOrder(root = this.root) {
+//         if (!root) return [];
+//         return [...this.inOrder(root.left), root.data, ...this.inOrder(root.right)]
+
+//     }
+//     preOrder(root = this.root) {
+//         if (!this.root) return console.log(" the tree is empty ");
+//         if (root) {
+//             console.log(root.data);
+//             this.preOrder(root.left);
+//             this.preOrder(root.right);
+//         }
+//     }
+//     postOrder(root = this.root) {
+//         if (!this.root) return console.log(" the tree is empty ");
+//         if (root) {
+//             this.postOrder(this.left)
+//             this.postOrder(root.right)
+//             console.log(root.data);
+//         }
+//     }
+// closest( target , root = this.root ){
+//     if( !root )return console.log(" the tree is empty ");
+//     let dif = Infinity;
+//     let value = null
+//     while( root ){
+//         let d = Math.abs( root.data - target );
+//         if( dif > d && root.data != target ){
+//             dif = d;
+//             value = root.data
+//         }
+//         if( root.data > target ){
+//             root = root.left
+//         }else if( root.data < target ){
+//             root = root.right;
+//         }else{
+//             break;
+//         }
+//     }
+//     return  console.log(value , dif);
+// }
+
+// isBST( root = this.root ){
+//     if( !this.root )return " the tree is empty";
+//     let sorted  = this.inOrder( root );
+//     for( let i = 0; i < sorted.length; i++ ){
+//         if( sorted[ i ] > sorted[ i + 1 ] )return false;
+//     }
+//     return true;
+// }
+//     print() {
+//         console.log(this.root);
+//     }
+// }
+// const bst = new BSTree();
+// bst.insert(22);
+// bst.insert(11);
+// bst.insert(54);
+// bst.insert(4)
 // console.log(bst.min());
 // console.log(bst.max());
 // bst.delete(4)
