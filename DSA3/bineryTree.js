@@ -68,11 +68,10 @@ class Node {
          return [...this.inOrderTraversal( root.left ) , root.value , ...this.inOrderTraversal(root.right)]
     }
     preOrderTraversal( root = this.root ){
-        if( root ){
-            console.log( root.value );
-            this.preOrderTraversal( root.left );
-            this.preOrderTraversal( root.right );
-        }
+        if( !root ) return [];
+        return [ root.value , ...this.preOrderTraversal(root.left) , ...this.preOrderTraversal(root.right)]
+
+        
     }
     postOrderTraversal( root = this.root ){
         if( root ){
@@ -144,4 +143,4 @@ class Node {
 // tree.deletion(1)
 // tree.console()
 // console.log(tree.closest(150));
-console.log(tree.isBST());
+console.log(tree.preOrderTraversal());

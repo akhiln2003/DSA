@@ -31,6 +31,48 @@ class Graph{
         }
     delete this.adjacentList[vertix]
     }
+
+    dfs(start){
+        const stack = [start];
+        const visited = new Set();
+        const out = [];
+
+        visited.add(start);
+
+        while( stack.length ){
+            let val = stack.pop();
+            out.push(val);
+
+            this.adjacentList[val].forEach(element => {
+                if( !visited.has(element)){
+                    visited.Set(element);
+                    stack.push(element)
+                }
+            });
+        }
+
+        return out
+
+    }
+
+    bfs(start){
+
+        const queue = [ start ];
+        const visited = new Set();
+        const out = [];
+
+        visited.add(start);
+        while(queue.length ){
+            let val = queue.shift();
+            out.push(val);
+            this.adjacentList[val].forEach(element => {
+                if( !visited.has(element) ){
+                    visited.Set(element);
+                    queue.push(element)
+                }
+            })
+        }
+    }
 }
 const graph = new Graph();
 graph.insert(9,"a",false);
